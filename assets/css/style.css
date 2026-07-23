@@ -176,28 +176,36 @@ a:hover {
 }
 
 .bg-1 {
-    background-color: #9bd3d0;
+    background-color: #A3C1AD;
 }
 
 .bg-2 {
-    background-color: #fec447;
+    background-color: #FFF5D6;
 }
 
 .bg-3 {
-    background-color: #feccb5;
+    background-color: #E3B1A2;
 }
 
 .bg-4 {
-    background-color: #92b5ff;
+    background-color: #97BCE3;
 }
 
 .bg-5 {
-    background-color: #c4d39b;
+    background-color: #CBB2E0;
 }
 
 .bg-6 {
-    background-color: #d2ceff;
+    background-color: #F9D5DE;
 }
+
+.bg-7 { 
+    background-color: #FFD1B3 
+ } 
+
+.bg-8 { 
+    background-color: #C3EAD5 
+} 
 
 main {
     position: relative;
@@ -695,7 +703,7 @@ main {
 
 .footer .nav a {
     font-size: 20px;
-    color: rgba(255, 2555, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .footer .nav a:hover {

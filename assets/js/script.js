@@ -15,11 +15,11 @@ $(window).on("scroll", function () {
 });
 
 // Document Ready
-$(document).ready(function(){
+$(document).ready(function () {
 
     //Typing animation
     new Typed('.type-it', {
-        strings:['Designer', 'Developer', 'Freelancer'], 
+        strings: ['Designer', 'Developer', 'Videomaker' ,'Freelancer'],
         typeSpeed: 100,
         loop: true
     });
@@ -38,12 +38,14 @@ $(document).ready(function(){
     //   900:{
     //        items:2
     //    }
-  //  }
-// }) ;
+    //  }
+    // }) ;
 
-//One Page Scroll
-$.ScrollIt();
-
+    //One Page Scroll
+    $.ScrollIt({
+        easing: 'linear',
+        topOffset: -70
+    })
 
 })
 
