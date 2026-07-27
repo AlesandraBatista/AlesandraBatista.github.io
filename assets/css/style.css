@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --primary-color: #ff651c;
+    --primary-color: #924d2e;
     --dark-color: #373737;
 }
 
@@ -21,7 +21,7 @@ a {
 }
 
 a:hover {
-    color: #cb612f;
+    color: #93593e;
     text-decoration: none;
 }
 
@@ -33,7 +33,7 @@ a:hover {
     color: var(--dark-color) !important;
 }
 
-/*Header*/
+/* Header */
 .main-header {
     position: fixed;
     top: 0;
@@ -75,14 +75,21 @@ a:hover {
     transition: ease all 0.3s;
 }
 
-.main-header .navbar-nav>li>.nav-link:hover, .main-header .navbar-nav>li>.nav-link.active {
+.main-header .navbar-nav>li>.nav-link:hover,
+.main-header .navbar-nav>li>.nav-link.active {
     color: var(--primary-color);
 }
 
-.main-header .navbar-nav>li>.nav-link:hover::after, .main-header .navbar-nav>li>.nav-link:active:after {
+.main-header .navbar-nav>li>.nav-link:hover::after,
+.main-header .navbar-nav>li>.nav-link:active:after {
     left: 0;
     right: auto;
     width: 100%;
+}
+
+/* Logo Header */
+.navbar-brand h4 span {
+    color: var(--primary-color);
 }
 
 @media (max-width: 991px) {
@@ -139,7 +146,7 @@ a:hover {
 }
 
 .fixed-header .main-header {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 0.125rem 0.25rem rgba(55, 55, 55, 0.07);
 }
@@ -158,6 +165,7 @@ a:hover {
     background: var(--primary-color);
     color: #fff;
     box-shadow: 6px 6px 0 -1px var(--dark-color);
+    cursor: pointer;
 }
 
 .colored-btn:hover {
@@ -168,7 +176,7 @@ a:hover {
 }
 
 .bg-gray {
-    background-color: rgba(254, 196, 72, 0.1);
+    background-color: rgba(20, 20, 18, 0.1);
 }
 
 .bg-dark {
@@ -199,13 +207,13 @@ a:hover {
     background-color: #F9D5DE;
 }
 
-.bg-7 { 
-    background-color: #FFD1B3 
- } 
+.bg-7 {
+    background-color: #FFD1B3;
+}
 
-.bg-8 { 
-    background-color: #C3EAD5 
-} 
+.bg-8 {
+    background-color: #C3EAD5;
+}
 
 main {
     position: relative;
@@ -264,11 +272,10 @@ main {
 
 @media(max-width: 767px) {
     .home-section .home-intro h1 {
-        margin: 0 0 25px;
         font-size: 45px;
+        margin: 0 0 25px;
     }
 }
-
 
 .home-section .home-intro h1 span {
     border-bottom: 2px solid #FEC448;
@@ -276,7 +283,6 @@ main {
 
 .home-section .home-intro p {
     font-size: 20px;
-
 }
 
 .home-image img {
@@ -467,7 +473,67 @@ main {
 }
 
 .about-text p {
-    font-size: 18px
+    font-size: 18px;
+}
+
+/* Eyebrow label - usado em "Quem sou" e "Ferramentas & Skills" */
+.about-eyebrow {
+    font-weight: 600;
+    color: var(--primary-color);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0 0 12px;
+}
+
+/* Skills fundidas dentro do Quem sou */
+.skills-strip {
+    border-top-color: rgba(55, 55, 55, 0.1) !important;
+}
+
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+}
+
+.skill-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border: 2px solid var(--dark-color);
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.skill-badge .icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--dark-color);
+    transition: transform 0.3s ease;
+}
+
+.skill-badge h6 {
+    margin: 0;
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+.skill-badge:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 5px 5px 0 0 var(--primary-color);
+    background: rgba(255, 101, 28, 0.06);
+}
+
+.skill-badge:hover .icon {
+    transform: rotate(-10deg) scale(1.15);
+    color: var(--primary-color);
 }
 
 .feature-box {
@@ -499,6 +565,7 @@ main {
     background: #fff;
     color: var(--dark-color);
     font-size: 32px;
+    flex-shrink: 0;
 }
 
 .feature-box .content {
@@ -530,101 +597,127 @@ main {
     height: 100px;
     overflow: hidden;
     margin: 0 auto;
-    border: 2px solid #373737
+    border: 2px solid #373737;
 }
 
+/* ==========================================
+   PROJETOS & CARDS (NOVO VISUAL LIMPO)
+   ========================================== */
 
-.feature-box-small {
-    padding: 15px;
-    align-items: center;
+.project-category {
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    color: #6c757d !important;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
-.feature-box-small {
-    padding: 15px;
-    align-items: center;
-}
-
-.feature-box-small:hover {
-    box-shadow: 3px 3px 0 0 var(--dark-color);
-}
-
-.feature-box-small .icon {
-    width: 50px;
-    height: 50px;
-}
-
-.feature-box-small h6 {
-    margin: 0;
-    color: var(--dark-color);
-    padding-left: 15px;
-
-}
-
-/* Portfolio*/
-.portfolio-box .portfolio-img {
-    position: relative;
+.project-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     border: 2px solid var(--dark-color);
+    background: #fff;
     box-shadow: 0 0 0 0 var(--dark-color);
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.portfolio-box .portfolio-img:hover {
-    box-shadow: 5px 5px 0 0 var(--dark-color);
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 6px 6px 0 0 var(--dark-color);
 }
 
-.portfolio-box .portfolio-text span {
-    display: inline-block;
-    padding: 8px 20px;
-    background: rgba(255, 101, 28, .2);
+.project-card-img {
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 2px solid var(--dark-color);
+}
+
+.project-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-card-img img {
+    transform: scale(1.05);
+}
+
+.project-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-card-body h4 {
     color: var(--dark-color);
-    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 8px 0 10px;
+}
+
+.project-card-excerpt {
+    color: #666;
+    font-size: 15px;
+    margin: 0 0 20px;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ==========================================
+   CORREÇÃO DOS MODAIS
+   ========================================== */
+.modal-backdrop {
+    z-index: 1040 !important;
+}
+
+.modal {
+    z-index: 1050 !important;
+}
+
+.modal-content {
+    border-radius: 0;
+    border: 2px solid var(--dark-color);
+}
+
+.project-modal-img {
+    border: 2px solid var(--dark-color);
+}
+
+.portfolio-tag-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(255, 101, 28, .15);
+    color: var(--dark-color);
+    letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 12px;
     border-radius: 30px;
-    margin-bottom: 18px;
 }
 
-.portfolio-box .portfolio-text h4 {
-    color: var(--dark-color);
-    font-weight: 32px;
-    margin-bottom: 20px;
+.project-modal-meta small {
+    color: #999;
+    letter-spacing: 1px;
+    font-size: 11px;
 }
 
-@media (max-width: 767px) {
-    .portfolio-box .portfolio-text h4 {
-        font-size: 26px;
-        margin-bottom: 10px;
-    }
+/* Formulário & Contactos */
+#form-status {
+    font-size: 14px;
+    color: #fff;
 }
 
-.portfolio-box .portfolio-text .colored-btn {
-    font-size: 12px;
-}
-
-/* Owl AQUI e o complemento do Carousel que não está funcionando
-.owl-dots {
-    text-align: center;
-}
-
-.owl-dots .owl-dot {
-    display: inline-blok;
-    vertical-align: top;
-    width: 12px;
-    height: 12px;
-    background: transparent;
-    border: 1px solid var(--dark-color);
-    transition: ease all 0.55s;
-    border-radius: 50%;
-    margin: 0 4px;
-}
-
-.owl-dots .owl-dot.active{
-    background: var(--dark-color);
-}
-*/
-
-/* Contact Section */
 .contact-form {
     border: 2px solid var(--dark-color);
     padding: 35px;
@@ -653,13 +746,13 @@ main {
 .contact-infos {
     margin: 0;
     padding: 0;
-    list-style: 35px;
+    list-style: none;
 }
 
 .contact-infos li {
     display: flex;
     position: relative;
-    padding-bottom: 35px
+    padding-bottom: 35px;
 }
 
 .contact-infos li:last-child {
@@ -672,7 +765,10 @@ main {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--dark-color);
+    color: #fff;
+    background: var(--primary-color);
+    border: 2px solid var(--dark-color);
+    box-shadow: 4px 4px 0 0 var(--dark-color);
     font-size: 25px;
 }
 
@@ -692,7 +788,7 @@ main {
     font-weight: 500;
 }
 
-/* Footer*/
+/* Footer */
 .footer {
     background-color: var(--dark-color);
     padding-top: 10px;
@@ -707,9 +803,48 @@ main {
 }
 
 .footer .nav a:hover {
-    color: var(--primary-color)
+    color: var(--primary-color);
 }
 
 .footer .nav a+a {
     margin-left: 18px;
+}
+
+/* Foto Sobre Mim */
+.about-img-container {
+    max-width: 340px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid var(--dark-color);
+    box-shadow: 3px 3px 0 0 var(--dark-color);
+}
+
+.about-photo {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    object-position: center 70%;
+    display: block;
+}
+
+
+.loader {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-top-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.loader.dark {
+    border: 3px solid rgba(0, 0, 0, 0.12);
+    border-top-color: rgba(0, 0, 0, 0.75);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
