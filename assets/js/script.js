@@ -17,7 +17,7 @@ $(window).on("scroll", function () {
 $(document).ready(function () {
     //Typing animation
     new Typed('.type-it', {
-        strings: ['Designer', 'Developer', 'Videomaker', 'Freelancer'],
+        strings: ['Designer', 'Developer', 'Creator', 'Freelancer'],
         typeSpeed: 100,
         loop: true
     });
